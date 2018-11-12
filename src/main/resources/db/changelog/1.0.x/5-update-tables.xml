@@ -1,0 +1,19 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+
+        logicalFilePath="1.0.x-update-5"
+
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+            http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="5-update-tables-1" author="p1nkZebra">
+        <addColumn schemaName="resource_circle"
+                   tableName="resource">
+            <column name="comment" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+
+
+</databaseChangeLog>

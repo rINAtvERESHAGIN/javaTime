@@ -1,0 +1,58 @@
+<clr-main-container>
+    <clr-header class="header-4">
+        <div class="branding">
+            <a href="#" class="nav-link">
+                <span class="clr-icon clr-clarity-logo"></span>
+                <span class="title">Java People</span>
+            </a>
+        </div>
+        <div class="header-nav" [clr-nav-level]="1">
+            <div>
+                <a class="nav-link" href="#" [routerLink]="['/main']" routerLinkActive="active">
+                    <span class="nav-text">Main</span>
+                </a>
+            </div>
+            <div>
+                <a class="nav-link" href="#" [routerLink]="['/resources-view']" routerLinkActive="active">
+                    <span class="nav-text">Resource view</span>
+                </a>
+                <a class="nav-link" href="#" [routerLink]="['/contributions-view']" routerLinkActive="active">
+                    <span class="nav-text">Contribution view</span>
+                </a>
+                <a class="nav-link" href="#" [routerLink]="['/events-view']" routerLinkActive="active">
+                    <span class="nav-text">Events view</span>
+                </a>
+            </div>
+
+            <div>
+                <a class="nav-link" href="#" [routerLink]="['/resource-table']" routerLinkActive="active">
+                    <span class="nav-text">Resource table</span>
+                </a>
+                <a class="nav-link" href="#" [routerLink]="['/contribution-table']" routerLinkActive="active">
+                    <span class="nav-text">Contribution table</span>
+                </a>
+                <a class="nav-link" href="#" [routerLink]="['/event-table']" routerLinkActive="active">
+                    <span class="nav-text">Events table</span>
+                </a>
+            </div>
+
+
+        </div>
+        <!--<div class="header-actions" [hidden]="!currentUser.name">-->
+            <!--<clr-dropdown>-->
+                <!--<button class="nav-text" clrDropdownTrigger>-->
+                    <!--{{currentUser.userDetail}} ({{currentUser.nameUpperCase}})-->
+                    <!--<clr-icon shape="caret down"></clr-icon>-->
+                <!--</button>-->
+                <!--<clr-dropdown-menu *clrIfOpen clrPosition="bottom-right">-->
+                    <!--<a (click)="logout()" clrDropdownItem>Log out</a>-->
+                <!--</clr-dropdown-menu>-->
+            <!--</clr-dropdown>-->
+        <!--</div>-->
+    </clr-header>
+    <div class="content-container">
+        <div class="content-area">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</clr-main-container>

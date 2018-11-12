@@ -1,0 +1,38 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+
+        logicalFilePath="db/changelog/0.0.x/0.0.x.xml"
+
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+            http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+        ">
+
+    <!-- Create database tag -->
+    <changeSet id="0.0.x" author="p1nkZebra">
+        <tagDatabase tag="0.0.x"/>
+    </changeSet>
+
+    <!-- Create Property table -->
+    <changeSet id="create-property" author="p1nkZebra">
+        <createTable tableName="property">
+            <column name="name" type="VARCHAR(255)">
+                <constraints
+                        nullable="false"
+                        unique="true"
+                />
+            </column>
+            <column name="value" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <include file="changelog/1.0.x/1-resource-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/1.0.x/2-contribution-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/1.0.x/3-event-table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/1.0.x/4-event-table-update-1.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/1.0.x/5-update-tables.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

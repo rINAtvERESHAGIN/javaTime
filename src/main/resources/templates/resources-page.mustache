@@ -1,0 +1,21 @@
+<html>
+
+    <body>
+    <div>Список ресурсов</div>
+    <div>
+        <form method="post">
+            <input type="text" name="name" placeholder="Новый ресурс">
+            <button type="submit" >Добавить</button>
+        </form>
+    </div>
+
+    {{#resources}}
+        <div>
+            <b>{{id}}</b>
+            <span>{{name}}</span>
+        </div>
+    {{/resources}}
+
+    </body>
+
+</html>

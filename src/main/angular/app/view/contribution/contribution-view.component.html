@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="col-lg-6">
+
+    </div>
+
+    <div class="col-lg-6">
+        <clr-datagrid >
+            <clr-dg-column>Resource Name</clr-dg-column>
+            <clr-dg-column>Contribution Name</clr-dg-column>
+            <clr-dg-column>Factor</clr-dg-column>
+            <clr-dg-column>Event Count</clr-dg-column>
+
+            <clr-dg-row *clrDgItems="let contribution of allContributionsView" >
+                 <clr-dg-cell>{{contribution.resourceName}}</clr-dg-cell>
+                <clr-dg-cell>{{contribution.name}}</clr-dg-cell>
+                <clr-dg-cell>{{contribution.factor}}</clr-dg-cell>
+                <clr-dg-cell>{{contribution.eventCount}}</clr-dg-cell>
+            </clr-dg-row>
+
+            <clr-dg-footer>{{allContributionsView.length}} contributions</clr-dg-footer>
+        </clr-datagrid>
+    </div>
+</div>

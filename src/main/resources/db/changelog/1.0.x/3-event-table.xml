@@ -1,0 +1,30 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+
+        logicalFilePath="1.0.x-event-table-init"
+
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+            http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="event-init-1" author="Haharin">
+        <createTable tableName="event">
+            <column autoIncrement="true" name="event_id" type="BIGINT">
+                <constraints
+                        primaryKey="true"
+                        primaryKeyName="pk_event"/>
+            </column>
+            <column name="contribution_id" type="BIGINT">
+                <constraints nullable="false"
+                             foreignKeyName="fk_contribution_id"
+                             referencedTableName="contribution"
+                             referencedColumnNames="id"/>
+            </column>
+            <column name="event_date" type="DATE"/>
+            <column name="comment" type="VARCHAR"/>
+        </createTable>
+    </changeSet>
+
+
+</databaseChangeLog>

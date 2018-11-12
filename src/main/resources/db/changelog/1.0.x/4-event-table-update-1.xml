@@ -1,0 +1,23 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+
+        logicalFilePath="1.0.x-event-table-init"
+
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="
+            http://www.liquibase.org/xml/ns/dbchangelog
+            http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="event-update-1" author="Haharin">
+        <addColumn schemaName="resource_circle"
+                   tableName="event">
+            <column name="name" type="varchar(255)" defaultValue="Simple event">
+                <constraints nullable="false"/>
+            </column>
+            <column name="cron_period" type="varchar(255)"/>
+            <column name="user_value" type="decimal(5,2)"/>
+        </addColumn>
+    </changeSet>
+
+
+</databaseChangeLog>

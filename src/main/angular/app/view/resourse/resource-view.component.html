@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-lg-6">
+
+    </div>
+
+    <div class="col-lg-6">
+        <clr-datagrid>
+            <clr-dg-column>Resource Name</clr-dg-column>
+            <clr-dg-column>Contribution Count</clr-dg-column>
+            <clr-dg-column>Event Count</clr-dg-column>
+            <clr-dg-column>Comment</clr-dg-column>
+
+            <clr-dg-row *ngFor="let resource of allResourceView">
+                <clr-dg-cell>{{resource.name}}</clr-dg-cell>
+                <clr-dg-cell>{{resource.contributionCount}}</clr-dg-cell>
+                <clr-dg-cell>{{resource.eventCount}}</clr-dg-cell>
+                <clr-dg-cell>{{resource.comment}}</clr-dg-cell>
+            </clr-dg-row>
+
+            <clr-dg-footer>{{allResourceView.length}} resources</clr-dg-footer>
+        </clr-datagrid>
+    </div>
+</div>
+
