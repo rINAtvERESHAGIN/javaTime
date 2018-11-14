@@ -2,6 +2,7 @@ package com.javaPeople.repository;
 
 import com.javaPeople.domain.CircleResource;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,4 +18,6 @@ public interface CircleResourceRepository extends JpaRepository<CircleResource, 
 //    Name findUserByStatusAndNameNamedParams(
 //            @Param("status") Integer status,
 //            @Param("name") String name);
+    @Query(value = "SELECT resource_circle.resource.name r FROM resource_circle.resource r WHERE r.id=resource_circle.contribution.resource_id",nativeQuery = true)
+    List<CircleResource> findCircleResourceByContributionId(Long id);
 }

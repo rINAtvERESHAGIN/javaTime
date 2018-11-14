@@ -14,4 +14,22 @@ public interface ContributionRepository extends JpaRepository<Contribution,Long>
     @Query(value = "SELECT u FROM Contribution u WHERE u.resource = :resource")
     List<Contribution> findByResource(@Param("resource") CircleResource circleResource);
 
+// @Query(value = "SELECT * c FROM Contribution ")
+//    List<Contribution> findAll;
+
+//    @Query(value = "SELECT * FROM resource_circle.contribution e ", nativeQuery = true)
+//    List<Contribution> findAll(Long contribution);
+
+    @Query(value = "SELECT * " +
+            "FROM resource_circle.contribution " +
+            "WHERE resource_circle.contribution.factor = (SELECT MAX(factor) FROM resource_circle.contribution)",
+            nativeQuery = true)
+    Contribution findResourceByMaximumFactorFromComtribution();
+    // для функции поиска ресурса с наибольшим колличеством событий
+    @Query(value = "SELECT *" +
+            "FROM resource_circle.contribution re " +
+            "WHERE re.resource_id = ?  ",
+            nativeQuery = true)
+    List<Contribution> findByResourceId(Long resource_id);
+
 }

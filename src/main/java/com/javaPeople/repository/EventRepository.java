@@ -25,4 +25,9 @@ public interface EventRepository extends JpaRepository<Event, Long> {
     @Modifying
     @Query(value = "DELETE  FROM Event e WHERE e.id in :ids")
     void deleteByIds(@Param("ids") List<Long> ids);
+
+    @Query(value = "SELECT COUNT(*) " +
+            "FROM resource_circle.event " +
+            "WHERE resource_circle.event.contribution_id = ?",nativeQuery = true)
+    int findEventCountByContributionId(Long id);
 }
